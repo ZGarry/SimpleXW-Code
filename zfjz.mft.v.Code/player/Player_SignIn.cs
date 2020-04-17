@@ -28,7 +28,7 @@ namespace zfjz.mft.v.Code.player
             //用疯狂做普通判定(大于44才判定)
             if (Crazy >= 44 && Jude(Crazy))
             {
-                e.FromGroup.SendGroupMessage(cqat, " ", "你的疯狂指数太高了~没法专心修炼，明天再来吧");
+                e.FromGroup.SendGroupMessage(cqat, " ", "疯狂太高，你无心修炼，明天再来吧（其他角色可以 '援助@你'帮你吸收疯狂）");
                 return;
             }
 

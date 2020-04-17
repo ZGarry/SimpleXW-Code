@@ -121,7 +121,8 @@ namespace zfjz.mft.v.Code.player
 
                 if (value >= 0)
                 {
-                    if (value >= 60)
+                    //并且继续增加的话
+                    if (value >= 60 && value > _Crazy)
                     {
                         IAMCRAZY();
                     }
@@ -185,56 +186,57 @@ namespace zfjz.mft.v.Code.player
 
         }
 
-        public async void IAMCRAZY()
+        public void IAMCRAZY()
         {
             SendMes($"高度疯狂让你神志不清！现在的你随时可能会做傻事！");
 
             //开始干傻事吧！ 从定时（这样之后触发太多了），改为每次
-            await Task.Run(() =>
+
+            switch (random.Next(0, 6))
             {
+                case (0):
+                    SendMes("你发疯似的扔掉了自己的全部金币！");
+                    Gold = 0;
+                    break;
+                case (1):
+                    //如果为空，就不丢，自动出错
+                    var li = Package.Dic.Keys.ToList();
+                    if (li.Count == 0)
+                    {
+                        return;
+                    }
+                    var name = li[0];
+                    Package.LoseOne(name);
+                    SendMes($"我早就看你这个废物不耐烦了！说着你把背包里的{name}扔了出去。");
+                    break;
+                case (2):
+                    XW -= 400;
+                    SendMes($"你花了半天时间自残，终于让自己修为掉了400点。");
+                    break;
+                case (3):
+                    _Basic -= 2;
+                    _Crazy += 2;
+                    Lucky -= 1;
+                    SendMes($"你想要自毁双足！要不是同门师兄及时制止了你，现在你已经流血而死了。体质-2，疯狂+2，幸运-1");
+                    break;
+                case (4):
+                    _Crazy += 9;
+                    SendMes($"你盯着太阳光看了一整天！疯狂+9");
+                    break;
+                case (5):
+                    _Basic -= 9;
+                    SendMes($"你扯掉了自己所有头发，指甲，身上到处是血印！体质-9");
+                    break;
+            }
+            //失去全部金币
+            //失去随机一个物品
+            //失去400点修为
+            //体质-2，疯狂+2，幸运-1
+            //疯狂+9
+            //体质-9
 
-                switch (random.Next(0, 6))
-                {
-                    case (0):
-                        SendMes("你发疯似的扔掉了自己的全部金币！");
-                        Gold = 0;
-                        break;
-                    case (1):
-                        var name = Package.Dic.Keys.ToList()[0];
-                        Package.LoseOne(name);
-                        SendMes($"我早就看你这个废物不耐烦了！说着你把背包里的{name}扔了出去。");
-                        break;
-                    case (2):
-                        XW -= 400;
-                        SendMes($"你花了半天时间自残，终于让自己修为掉了400点。");
-                        break;
-                    case (3):
-                        Basic -= 2;
-                        Crazy += 2;
-                        Lucky -= 1;
-                        SendMes($"你想要自毁双足！要不是同门师兄及时制止了你，现在你已经流血而死了。体质-2，疯狂+2，幸运-1");
-                        break;
-                    case (4):
-                        Crazy += 9;
-                        SendMes($"你盯着太阳光看了一整天！疯狂+9");
-                        break;
-                    case (5):
-                        Basic -= 9;
-                        SendMes($"你扯掉了自己所有头发，指甲，身上到处是血印！体质-9");
-                        break;
-                }
-                //失去全部金币
-                //失去随机一个物品
-                //失去400点修为
-                //体质-2，疯狂+2，幸运-1
-                //疯狂+9
-                //体质-9
 
-
-            });
         }
     }
-
 }
-
 

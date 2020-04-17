@@ -19,7 +19,6 @@ namespace zfjz.mft.v.Code.handle
             //获取个人信息
             if (!Game.Players.ContainsKey(qq))
             {
-                FixStroy.WarnNoCreateUser(e);
                 return;
             }
             var p = Game.Players[qq];

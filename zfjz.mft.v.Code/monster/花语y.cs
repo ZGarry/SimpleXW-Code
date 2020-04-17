@@ -12,7 +12,7 @@ namespace zfjz.mft.v.Code.monster
         public 花语y() : base(
             name0: "花语y", XW0: 88888, basic0: 200, Crazy0: 40, Lucky0: 10,
             fuc0: "使用百宝箱！以及...随时跑路！", lose0: "花语y的百宝箱",
-            icon0: "", level0: "小兵")
+            icon0: "", level0: "首领")
         {
         }
         public override void Effect(Player p)

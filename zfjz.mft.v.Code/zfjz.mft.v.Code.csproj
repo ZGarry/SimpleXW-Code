@@ -72,6 +72,8 @@
     <Compile Include="common\StringStringDic.cs" />
     <Compile Include="common\StringIntDic.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="handle\额外指令\SendHandle.cs" />
+    <Compile Include="handle\额外指令\HelpHandle.cs" />
     <Compile Include="handle\额外指令\FORBINHandle.cs" />
     <Compile Include="handle\额外指令\GiveHandle.cs" />
     <Compile Include="handle\额外指令\OuthomeHandle.cs" />

@@ -29,6 +29,8 @@ namespace zfjz.mft.v.Code.monster
             else
             {
                 p.SendMes("请挑衅遗迹中存在的怪物");
+                //如果挑战错怪了，就再给一次挑战机会
+                p.StatusInt.Set("上次挑衅时间", 0);
             }
 
         }

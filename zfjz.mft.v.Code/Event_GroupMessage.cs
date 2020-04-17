@@ -24,7 +24,10 @@ namespace zfjz.mft.v.Code
             {
                 var mes = e.Message.Text;
 
-
+                if (mes == "百科")
+                {
+                    e.FromGroup.SendGroupMessage("百科全书地址：https://zgarry.github.io/SimpleXiuXian/_site/story/index.html");
+                }
                 if (mes == "出关")
                 {
                     Handle.OuthomeHandle(e);
@@ -41,6 +44,14 @@ namespace zfjz.mft.v.Code
                 if (mes == "闭关")
                 {
                     Handle.InhomeHandle(e);
+                }
+                if (mes.StartsWith("援助"))
+                {
+                    Handle.HelpHandle(e);
+                }
+                if (mes.StartsWith("奖励"))
+                {
+                    Handle.SendHandle(e);
                 }
                 //选项
                 if (mes[0] == '#')
@@ -59,7 +70,7 @@ namespace zfjz.mft.v.Code
                 {
                     Handle.SignInHandle(e);
                 }
-                if (mes.Contains("作弊码"))
+                if (mes.StartsWith("作弊码"))
                 {
                     Handle.CheatHandle(e);
                 }
