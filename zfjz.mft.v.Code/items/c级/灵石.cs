@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 灵石() : base(
-            name0: "灵石", priceLow0: 2, priceHigh0: 9,
+            name0: "灵石", priceLow0: 1, priceHigh0: 7,
             fuc: "修为+100，欧皇+300", icon: "",
             des: "其中蕴含着灵气，只是不大好消化", level: "C")
         {

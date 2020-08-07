@@ -16,7 +16,7 @@ namespace zfjz.mft.v.Code.items
         public 大力丸() : base(
             name0: "大力丸", priceLow0: 17, priceHigh0: 27,
             fuc: "下一次战斗战力*1.3（可以服用多颗）", icon: "",
-            des: "连吃13颗可以毁天灭地！", level: "B")
+            des: "连吃13颗可以毁天灭地！", level: "违禁")
         {
 
         }

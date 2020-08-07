@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 红药水() : base(
-            name0: "红药水", priceLow0: 9, priceHigh0: 11,
+            name0: "红药水", priceLow0: 6, priceHigh0: 6,
             fuc: "疯狂+3，体质+9", icon: "",
             des: "疯狂，躁动，反应", level: "C")
         {

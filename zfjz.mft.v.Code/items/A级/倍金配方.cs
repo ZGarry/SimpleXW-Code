@@ -14,7 +14,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 倍金配方() : base(
-             name0: "倍金配方", priceLow0: 200, priceHigh0: 200,
+             name0: "倍金配方", priceLow0: 22, priceHigh0: 88,
             fuc: "投入一枚金币进行研究，成功获得100枚金币。失败再次获得此配方", icon: "",
             des: "参悟成功即可点石成金", level: "A")
         {

@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 忘忧草() : base(
             name0: "忘忧草", priceLow0: 123, priceHigh0: 123,
             fuc: "重置体质为50，疯狂为5", icon: "",
-            des: "从头再来", level: "A")
+            des: "从头再来", level: "违禁")
         {
         }
 

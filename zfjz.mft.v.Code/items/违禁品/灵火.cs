@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 灵火() : base(
             name0: "灵火", priceLow0: 37, priceHigh0: 37,
             fuc: "体质-2，今天内每次失去修为，体质都+1", icon: "",
-            des: "伤痛，是最好的特效药", level: "B")
+            des: "伤痛，是最好的特效药", level: "违禁")
         {
 
         }

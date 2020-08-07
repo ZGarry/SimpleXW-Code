@@ -21,6 +21,7 @@ namespace Native.Core
         public static void Register(IUnityContainer unityContainer)
         {
             unityContainer.RegisterType<IGroupMessage, Event_GroupMessage>("群消息处理");
+            unityContainer.RegisterType<IPrivateMessage, Event_PrivateMessage>("私聊消息处理");
             unityContainer.RegisterType<IAppEnable, Event_AppEnable>("应用已被启用");
             unityContainer.RegisterType<IAppDisable, Event_IAppDisable>("应用将被停用");
             unityContainer.RegisterType<ICQExit, Event_ICQExit>("酷Q关闭事件");

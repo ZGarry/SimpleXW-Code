@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 聚魔瓶() : base(
             name0: "聚魔瓶", priceLow0: 4, priceHigh0: 4,
             fuc: "未知", icon: "",
-            des: "闪烁着诡异的光泽", level: "C")
+            des: "闪烁着诡异的光泽", level: "违禁")
         {
 
         }

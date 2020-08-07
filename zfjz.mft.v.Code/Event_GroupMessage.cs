@@ -6,6 +6,7 @@ using System;
 using zfjz.mft.v.Code.handle;
 using zfjz.mft.v.Code.player;
 using zfjz.mft.v.Code.common;
+using Native.Sdk.Cqp;
 
 namespace zfjz.mft.v.Code
 {
@@ -23,7 +24,38 @@ namespace zfjz.mft.v.Code
             try
             {
                 var mes = e.Message.Text;
+                if (mes.StartsWith("d") || mes.StartsWith("D"))
+                {
+                    handle.Handle.dHandle(e);
+                }
 
+                //地雷蜘蛛
+                if (mes == "负伤榜")
+                {
+                    Handle.InjuredHandle(e);
+                }
+                if (cookies.ThatWords.Running && mes.Contains(cookies.ThatWords.word))
+                {
+                    Handle.MineHandle(e);
+                }
+                if (mes == "游戏")
+                {
+                    Handle.GameHandle(e);
+                }
+                //地雷蜘蛛
+
+                if (mes.Contains("群主") && mes.Contains("第一帅"))
+                {
+                    handle.Handle.GiveITHandle(e);
+                }
+                if (mes == "隐藏奖励")
+                {
+                    e.FromGroup.SendGroupMessage("哦~瞧瞧你发现了什么，试试说一些话来触发隐藏奖励吧！");
+                }
+                if (mes == "违禁品")
+                {
+                    handle.Handle.ForbinHandle(e);
+                }
                 if (mes == "百科")
                 {
                     e.FromGroup.SendGroupMessage("百科全书地址：https://zgarry.github.io/SimpleXiuXian/_site/story/index.html");

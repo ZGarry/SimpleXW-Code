@@ -36,7 +36,7 @@ namespace zfjz.mft.v.Code.items
         public static void Lottery(player.Player p)
         {
             var price = 3 + p.StatusInt.Get("抽奖次数") / 10;
-            p.StatusInt.AddOne("抽奖次数");
+
             if (p.StatusInt.Get("抽奖次数") > 9 && p.StatusInt.Get("抽奖次数") % 10 == 0)
             {
                 p.SendMes($"这是你第{p.StatusInt.Get("抽奖次数")}次抽奖啦~下一次，我就会多收你一枚金币了~");
@@ -48,6 +48,8 @@ namespace zfjz.mft.v.Code.items
             }
             else
             {
+                //抽奖次数+1
+                p.StatusInt.AddOne("抽奖次数");
                 p.Gold -= price;
             }
 
@@ -95,6 +97,20 @@ namespace zfjz.mft.v.Code.items
             p.SendMes(ALLItem[name].Report());
         }
 
+        // Static constructor
+        static ItemList()
+        {
+            var li = new List<Dictionary<string, Item>>() { ItemsA, ItemsB, ItemsC, ItemsS, ItemsSP, Forbin };
+            foreach (var i in li)
+            {
+                foreach (string key in i.Keys)
+                {
+                    if (!ALLItem.ContainsKey(key))
+                        ALLItem.Add(key, i[key]);
+                }
+            }
+        }
+
         //使用的时候（全体物品）
         public static void UseItemByPerson(player.Player p, string name)
         {
@@ -115,58 +131,11 @@ namespace zfjz.mft.v.Code.items
         }
 
 
-
         //所有Item（应该把所有物品设置可用）
-        public static Dictionary<string, Item> ALLItem = new Dictionary<string, Item>{
-            //奖励类
-            { "小金箔",new 小金箔() },
-            { "许愿币",new 许愿币() },
+        public static Dictionary<string, Item> ALLItem = new Dictionary<string, Item>
+        {
 
-            //c-级物品
-            { "回气丹",new 回气丹()},
-            { "红药水",new 红药水()},
-            { "复合药",new 复合药()},
-            { "灵石",new 灵石()},
-            { "聚魔瓶",new 聚魔瓶()},
-            { "闪回石",new 闪回石()},
-            { "伤药",new 伤药()},
-            { "增幅药剂",new 增幅药剂()},
-            { "邪气石",new 邪气石()},
-            { "序列I",new 序列I()},
-            { "序列X",new 序列X()},
-            { "月石",new 月石()},
-            { "小钱袋",new 小钱袋()},
-
-            //B-级物品
-
-              { "灵火",new 灵火()},
-            { "灵芝",new 灵芝()},
-            { "大力丸",new 大力丸()},
-            { "护身符",new 护身符()},
-            { "九转丹",new 九转丹()},
-
-            { "小红花",new 小红花()},
-            { "序列III",new 序列III()},
-            { "序列IX",new 序列IX()},
-            { "玻璃碎刃",new 玻璃碎刃()},
-            { "混乱药剂",new 混乱药剂()},
-
-            //A-级物品
-             { "倍金配方",new 倍金配方()},
-             { "圣水",new 圣水()},
-             { "忘忧草",new 忘忧草()},
-             { "小猪钱罐",new 小猪钱罐()},
-             { "缩小药水",new 缩小药水()},
-             { "放大药水",new 放大药水()},
-             { "神偷手套",new 神偷手套()},
-
-        ////S-级物品
-             { "传家宝",new 传家宝()},
-              { "收税卡",new 收税卡()},
-               { "序列V",new 序列V()},
-                { "一沓假钞",new 一沓假钞()},
-
-    };
+        };
 
 
 
@@ -177,29 +146,30 @@ namespace zfjz.mft.v.Code.items
             { "红药水",new 红药水()},
             { "复合药",new 复合药()},
             { "灵石",new 灵石()},
-            { "聚魔瓶",new 聚魔瓶()},
             { "闪回石",new 闪回石()},
+
             { "伤药",new 伤药()},
             { "增幅药剂",new 增幅药剂()},
             { "邪气石",new 邪气石()},
             { "序列I",new 序列I()},
-            { "序列X",new 序列X()},
             { "月石",new 月石()},
-            { "小钱袋",new 小钱袋()},
 
+            { "小钱袋",new 小钱袋()},
+            { "小树苗",new 小树苗()},
+            { "润肺露",new 润肺露()},
     };
         public static Dictionary<string, Item> ItemsB = new Dictionary<string, Item>{
-            { "灵火",new 灵火()},
             { "灵芝",new 灵芝()},
-            { "大力丸",new 大力丸()},
             { "护身符",new 护身符()},
             { "九转丹",new 九转丹()},
-
+            { "序列X",new 序列X()},
             { "小红花",new 小红花()},
+
             { "序列III",new 序列III()},
             { "序列IX",new 序列IX()},
-            { "玻璃碎刃",new 玻璃碎刃()},
             { "混乱药剂",new 混乱药剂()},
+            { "窃贼指环",new 窃贼指环()},
+            { "疾跑药水",new 疾跑药水()},
 
 
     };
@@ -207,11 +177,10 @@ namespace zfjz.mft.v.Code.items
              //A-级物品
              { "倍金配方",new 倍金配方()},
              { "圣水",new 圣水()},
-             { "忘忧草",new 忘忧草()},
              { "小猪钱罐",new 小猪钱罐()},
-             { "缩小药水",new 缩小药水()},
-             { "放大药水",new 放大药水()},
              { "神偷手套",new 神偷手套()},
+              { "缩小药片",new 缩小药片()},
+               { "天山雪莲",new 天山雪莲()},
 
     };
         public static Dictionary<string, Item> ItemsS = new Dictionary<string, Item>{
@@ -225,6 +194,7 @@ namespace zfjz.mft.v.Code.items
         public static Dictionary<string, Item> ItemsSP = new Dictionary<string, Item>{
             { "小金箔",new 小金箔() },
             { "许愿币",new 许愿币() },
+            { "饮料币",new 饮料币()}
 
     };
 
@@ -234,10 +204,24 @@ namespace zfjz.mft.v.Code.items
             { "复合药",new 复合药()},
             { "伤药",new 伤药()},
             { "增幅药剂",new 增幅药剂()},
-            { "缩小药水",new 缩小药水()},
-            { "放大药水",new 放大药水()},
             { "圣水",new 圣水()},
+
+            { "润肺露",new 润肺露()},
+            { "疾跑药水",new 疾跑药水()},
+             { "缩小药片",new 缩小药片()},
     };
+
+        //违禁品
+        public static Dictionary<string, Item> Forbin = new Dictionary<string, Item>
+        {
+            {"玻璃碎刃",new 玻璃碎刃() },
+            {"大力丸",new 大力丸() },
+            {"放大药水",new 放大药水() },
+            {"聚魔瓶",new 聚魔瓶() },
+            {"灵火",new 灵火() },
+            {"缩小药水",new 缩小药水() },
+            {"忘忧草",new 忘忧草() },
+        };
 
         public static Item RandomOne(Dictionary<string, Item> item_dic)
         {

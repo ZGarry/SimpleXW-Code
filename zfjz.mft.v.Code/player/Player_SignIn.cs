@@ -32,25 +32,44 @@ namespace zfjz.mft.v.Code.player
                 return;
             }
 
+            //小树苗判断
+            if (this.StatusInt.Contain("树苗大小"))
+            {
+                StatusInt.AddOne("树苗大小");
+                if (StatusInt.Get("树苗大小") >= 5)
+                {
+                    SendMes("你的小树苗成熟啦~摘获一个饮料币");
+                    StatusInt.Dic.Remove("树苗大小");
+                    Package.AddOne("饮料币");
+                }
+                else
+                {
+                    SendMes($"你的小树苗正在茁壮成长，离成熟还需要{5 - StatusInt.Get("树苗大小")}天");
+                }
+            }
+
+
             //额外判定一次小猪钱罐
             if (StatusStr.Contain("小猪钱罐") && Jude(50))
             {
+                Gold += 1;
                 SendMes("小猪钱罐让你获得一个额外的金币！");
             }
 
             var addGold = (StrictJude(Lucky) ? 2 : 1);
-            Gold += addGold;
             if (LevelNum >= 8)
             {
                 addGold += 1;
             }
+            Gold += addGold;
+            
             var addNum = GetTrainNum();
             XW += addNum;
 
             //levelNum  
             if (LevelNum >= 9)
             {
-                Crazy -= 5;
+                Crazy -= 1;
             }
             string name = "";
             if (LevelNum >= 10)
@@ -73,7 +92,7 @@ namespace zfjz.mft.v.Code.player
             //渡劫 这儿代码写的也太乱了，但是我觉得也米有动的必要
             if (!CheckLevelUp())
             {
-                temple = @$"{story},修为{(addNum >= 0 ? "+" : "")}{addNum},金币+{addGold}{(LevelNum >= 9 ? ",修为-5" : "")}{(name != "" ? $",获得一个{name}" : "")}
+                temple = @$"{story},修为{(addNum >= 0 ? "+" : "")}{addNum},金币+{addGold}{(LevelNum >= 9 ? ",疯狂-1" : "")}{(name != "" ? $",获得一个{name}" : "")}
 当前修为: {XW}
 当前境界: {Level.LevelName}";
 

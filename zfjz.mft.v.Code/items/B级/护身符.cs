@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     public class 护身符 : Item
     {
         public 护身符() : base(
-            name0: "护身符", priceLow0: 22, priceHigh0: 44,
+            name0: "护身符", priceLow0: 12, priceHigh0: 12,
             fuc: "24h之内！幸运+5！", icon: "",
             des: "全球限量·寺庙之光·内置写真·守计大师·开光版", level: "B")
         {

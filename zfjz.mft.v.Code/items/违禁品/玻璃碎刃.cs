@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 玻璃碎刃() : base(
             name0: "玻璃碎刃", priceLow0: 1, priceHigh0: 1,
             fuc: "疯狂+5，下一次攻击必定暴击", icon: "",
-            des: "谁还没有小时候踢球踢碎过一面镜子呢", level: "B")
+            des: "谁还没有小时候踢球踢碎过一面镜子呢", level: "违禁")
         {
 
         }

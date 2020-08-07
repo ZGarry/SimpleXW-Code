@@ -14,7 +14,7 @@ namespace zfjz.mft.v.Code.items
     {
         
         public 月石() : base(
-             name0: "月石", priceLow0: 7, priceHigh0: 17,
+             name0: "月石", priceLow0: 1, priceHigh0: 7,
             fuc: "月光越盛，月石效果越强！", icon: "",
             des: "一闪一闪亮晶晶", level: "C")
         {

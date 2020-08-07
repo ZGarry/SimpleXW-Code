@@ -14,7 +14,7 @@ namespace zfjz.mft.v.Code.items
 
         public 邪气石() : base(
              name0: "邪气石", priceLow0: 1, priceHigh0: 2,
-            fuc: "疯狂+3，每有5点疯狂，金币+1", icon: "",
+            fuc: "疯狂+3，每有5点疯狂，金币+1（不超过10）", icon: "",
             des: "黑暗府邸的产物", level: "C")
         {
         }
@@ -23,6 +23,10 @@ namespace zfjz.mft.v.Code.items
         {
             p.Crazy += 3;
             int gold_add = p.Crazy / 5;
+            if (gold_add >= 10)
+            {
+                gold_add = 10;
+            }
             p.Gold += gold_add;
             p.SendMes($"你正在使用{name},疯狂+3,金币+{gold_add}");
         }

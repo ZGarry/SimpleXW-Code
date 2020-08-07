@@ -21,7 +21,7 @@ namespace zfjz.mft.v.Code
         static public Dictionary<long, Player> Players = new Dictionary<long, Player>();
 
 
-
+        
 
         static public void Init()
         {
@@ -41,7 +41,8 @@ namespace zfjz.mft.v.Code
             foreach (var p in Game.Players.Values) {
                 var li = p.StatusStr.Dic.Keys.ToList();
                 foreach (var c in li) {
-                    if (p.StatusStr.Dic[c] == "使用中"){
+                    if (p.StatusStr.Dic[c] == "使用中"|| p.StatusStr.Dic[c] == "on")
+                    {
                         p.StatusStr.Dic.Remove(c);
                     }
                 }

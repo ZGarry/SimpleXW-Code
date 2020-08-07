@@ -23,7 +23,7 @@ namespace zfjz.mft.v.Code.items
         {
             var itm = ItemList.RandomOne(ItemList.ItemsBill);
             p.SendMes($"{name}原来是...贴错了名字的{itm.name},但为时已晚，你已经全喝下去了");
-            p.Package.AddOne(name); //加一个用一个
+            p.Package.AddOne(itm.name); //加一个用一个
             itm.UseBy(p);
         }      
     }

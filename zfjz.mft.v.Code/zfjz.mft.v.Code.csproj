@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\酷Q Air\dev\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -71,7 +71,15 @@
     <Compile Include="common\Monn.cs" />
     <Compile Include="common\StringStringDic.cs" />
     <Compile Include="common\StringIntDic.cs" />
+    <Compile Include="cookies\ThatWords.cs" />
+    <Compile Include="Event_PrivateMessage.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="handle\cookies\GameHandle.cs" />
+    <Compile Include="handle\cookies\InjuredHandle.cs" />
+    <Compile Include="handle\cookies\dHandle.cs" />
+    <Compile Include="handle\cookies\MineHandle.cs" />
+    <Compile Include="handle\GiveHandle.cs" />
+    <Compile Include="handle\额外指令\banitemHandle.cs" />
     <Compile Include="handle\额外指令\SendHandle.cs" />
     <Compile Include="handle\额外指令\HelpHandle.cs" />
     <Compile Include="handle\额外指令\FORBINHandle.cs" />
@@ -97,23 +105,30 @@
     <Compile Include="handle\ChooseHandle.cs" />
     <Compile Include="handle\ShopHandle.cs" />
     <Compile Include="handle\RamdonHandle.cs" />
+    <Compile Include="items\A级\天山雪莲.cs" />
+    <Compile Include="items\A级\缩小药片.cs" />
+    <Compile Include="items\A级\药书.cs" />
     <Compile Include="items\A级\神偷手套.cs" />
     <Compile Include="items\A级\小猪钱罐.cs" />
     <Compile Include="items\A级\圣水.cs" />
     <Compile Include="items\A级\倍金配方.cs" />
-    <Compile Include="items\A级\放大药水.cs" />
+    <Compile Include="items\c级\润肺露.cs" />
+    <Compile Include="items\B级\疾跑药水.cs" />
+    <Compile Include="items\B级\窃贼指环.cs" />
+    <Compile Include="items\违禁品\放大药水.cs" />
     <Compile Include="items\B级\混乱药剂.cs" />
     <Compile Include="items\B级\灵芝.cs" />
     <Compile Include="items\B级\小红花.cs" />
-    <Compile Include="items\B级\玻璃碎刃.cs" />
-    <Compile Include="items\A级\忘忧草.cs" />
-    <Compile Include="items\A级\缩小药水.cs" />
+    <Compile Include="items\违禁品\玻璃碎刃.cs" />
+    <Compile Include="items\违禁品\忘忧草.cs" />
+    <Compile Include="items\违禁品\缩小药水.cs" />
     <Compile Include="items\B级\序列III.cs" />
     <Compile Include="items\B级\序列IX.cs" />
-    <Compile Include="items\B级\大力丸.cs" />
+    <Compile Include="items\违禁品\大力丸.cs" />
     <Compile Include="items\B级\九转丹.cs" />
     <Compile Include="items\B级\护身符.cs" />
-    <Compile Include="items\B级\灵火.cs" />
+    <Compile Include="items\违禁品\灵火.cs" />
+    <Compile Include="items\c级\小树苗.cs" />
     <Compile Include="items\c级\小钱袋.cs" />
     <Compile Include="items\c级\月石.cs" />
     <Compile Include="items\Item.cs" />
@@ -126,27 +141,34 @@
     <Compile Include="items\特殊\饮料币.cs" />
     <Compile Include="items\特殊\小金箔.cs" />
     <Compile Include="items\特殊\许愿币.cs" />
-    <Compile Include="items\c级\序列X.cs" />
+    <Compile Include="items\B级\序列X.cs" />
     <Compile Include="items\c级\序列I.cs" />
     <Compile Include="items\c级\复合药.cs" />
     <Compile Include="items\c级\闪回石.cs" />
     <Compile Include="items\c级\灵石.cs" />
     <Compile Include="items\c级\邪气石.cs" />
-    <Compile Include="items\c级\聚魔瓶.cs" />
+    <Compile Include="items\违禁品\聚魔瓶.cs" />
     <Compile Include="items\c级\增幅药剂.cs" />
     <Compile Include="items\c级\红药水.cs" />
     <Compile Include="items\c级\回气丹.cs" />
     <Compile Include="monster\MonsterList.cs" />
     <Compile Include="monster\Monster.cs" />
-    <Compile Include="monster\PlaceList.cs" />
     <Compile Include="monster\place\NowPlace.cs" />
     <Compile Include="monster\place\Place.cs" />
+    <Compile Include="monster\place\废弃神殿.cs" />
+    <Compile Include="monster\place\滴血洞窟.cs" />
     <Compile Include="monster\place\鲜花城堡.cs" />
     <Compile Include="monster\place\海妖弧岛.cs" />
     <Compile Include="monster\place\北境雷山.cs" />
+    <Compile Include="monster\眼中钉.cs" />
     <Compile Include="monster\天雷阵.cs" />
+    <Compile Include="monster\地下迷宫.cs" />
+    <Compile Include="monster\绞首巨蟒.cs" />
+    <Compile Include="monster\蝙蝠群.cs" />
     <Compile Include="monster\花语y.cs" />
     <Compile Include="monster\采集客.cs" />
+    <Compile Include="monster\晴空号.cs" />
+    <Compile Include="monster\骸骨大将.cs" />
     <Compile Include="monster\雇佣兵.cs" />
     <Compile Include="monster\深海女皇.cs" />
     <Compile Include="monster\小海妖.cs" />

@@ -10,7 +10,7 @@ namespace zfjz.mft.v.Code.handle
     {
         public static void AcheHandle(CQGroupMessageEventArgs e)
         {
-            string tem = @"    成绩榜！ 
+            string tem = @"    成就榜！ 
 -------------------
 每一个实现过成就的人，都是修仙史上的一段传奇";
             string b = "";

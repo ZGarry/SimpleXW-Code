@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     public class 序列III : Item
     {
         public 序列III() : base(
-            name0: "序列III", priceLow0: 1, priceHigh0: 24,
+            name0: "序列III", priceLow0: 1, priceHigh0: 14,
             fuc: "修为+333", icon: "",
             des: "质朴", level: "B")
         {

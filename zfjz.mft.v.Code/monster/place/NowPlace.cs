@@ -39,6 +39,9 @@ namespace zfjz.mft.v.Code.monster
         {
             {      "北境雷山", new  北境雷山()},
             {      "海妖弧岛", new 海妖弧岛()},
+            { "鲜花城堡",new 鲜花城堡()},
+             { "滴血洞窟",new 滴血洞窟()},
+              { "废弃神殿",new 废弃神殿()},
         };
 
         //随机挑选一个作为本次遗迹内容
@@ -47,7 +50,7 @@ namespace zfjz.mft.v.Code.monster
             var li = AllPlaces.Keys.ToList();
             var name = li[(new Random()).Next(li.Count)];
             //替换当前遗迹
-            
+
             Now = AllPlaces[name];
         }
     }

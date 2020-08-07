@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 灵芝() : base(
-            name0: "灵芝", priceLow0: 15, priceHigh0: 24,
+            name0: "灵芝", priceLow0: 12, priceHigh0: 12,
             fuc: "体质-13，疯狂-13。失去700修为，获得700点修为。", icon: "",
             des: "活血清毒，激发潜能", level: "C")
         {

@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 闪回石() : base(
-            name0: "闪回石", priceLow0: 7, priceHigh0: 9,
+            name0: "闪回石", priceLow0: 1, priceHigh0: 7,
             fuc: "疯狂-7，超过部分加体质", icon: "",
             des: "其上有闪电回文", level: "C")
         {

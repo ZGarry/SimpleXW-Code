@@ -12,7 +12,7 @@ namespace zfjz.mft.v.Code.player
     {
         public double GetAtk()
         {            
-            var res = (XW + 233.3) * (BasicJude() + CrazyJude()) / 100;
+            var res = (XW + 233.3) * (Basic + CrazyJude()) / 100;
             //避免负数以及过于小
             if (res < 100)
             {

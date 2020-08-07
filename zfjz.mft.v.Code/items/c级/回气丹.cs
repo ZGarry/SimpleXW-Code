@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 回气丹() : base(
-            name0: "回气丹", priceLow0: 5, priceHigh0: 12,
+            name0: "回气丹", priceLow0: 5, priceHigh0: 5,
             fuc: "体质+5", icon: "",
             des: "修炼者必备，用于快速回复", level: "C")
         {

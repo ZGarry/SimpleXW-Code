@@ -35,11 +35,12 @@ namespace zfjz.mft.v.Code.handle
 
             //展示信息
             string template = $@"修为排行榜-像大佬学习！
-1.{e.FromGroup.GetGroupMemberInfo(up[0].QQ).Nick} | {up[0].XW} |
-2.{e.FromGroup.GetGroupMemberInfo(up[1].QQ).Nick} | {up[1].XW} |
-3.{e.FromGroup.GetGroupMemberInfo(up[2].QQ).Nick} | {up[2].XW} |
-4.{e.FromGroup.GetGroupMemberInfo(up[3].QQ).Nick} | {up[3].XW} |
-5.{e.FromGroup.GetGroupMemberInfo(up[4].QQ).Nick} | {up[4].XW} |";
+
+1.{e.CQApi.GetStrangerInfo(up[0].QQ).Nick} | {up[0].XW} |
+2.{e.CQApi.GetStrangerInfo(up[1].QQ).Nick} | {up[1].XW} |
+3.{e.CQApi.GetStrangerInfo(up[2].QQ).Nick} | {up[2].XW} |
+4.{e.CQApi.GetStrangerInfo(up[3].QQ).Nick} | {up[3].XW} |
+5.{e.CQApi.GetStrangerInfo(up[4].QQ).Nick} | {up[4].XW} |";
             if (0 <= i && i <= 4)
             {
                 template += "\n你在榜上！再接再厉！";
@@ -48,17 +49,17 @@ namespace zfjz.mft.v.Code.handle
             {
                 template += @$"
 ......
-{i - 1 + 1}. {e.FromGroup.GetGroupMemberInfo(up[i - 1].QQ).Nick} | {up[i - 1].XW} |
-{i + 1}. {e.FromGroup.GetGroupMemberInfo(up[i].QQ).Nick} | {up[i].XW} |
+{i - 1 + 1}. {e.CQApi.GetStrangerInfo(up[i - 1].QQ).Nick} | {up[i - 1].XW} |
+{i + 1}. {e.CQApi.GetStrangerInfo(up[i].QQ).Nick} | {up[i].XW} |
 你是最后一名，加油！";
             }
             else
             {
                 template += @$"
 ......
-{i - 1 + 1}. {e.FromGroup.GetGroupMemberInfo(up[i - 1].QQ).Nick} | {up[i - 1].XW} |
-{i + 1}. {e.FromGroup.GetGroupMemberInfo(up[i].QQ).Nick} | {up[i].XW} |
-{i + 1 + 1}. {e.FromGroup.GetGroupMemberInfo(up[i + 1].QQ).Nick} | {up[i + 1].XW} |";
+{i - 1 + 1}. {e.CQApi.GetStrangerInfo(up[i - 1].QQ).Nick} | {up[i - 1].XW} |
+{i + 1}. {e.CQApi.GetStrangerInfo(up[i].QQ).Nick} | {up[i].XW} |
+{i + 1 + 1}. {e.CQApi.GetStrangerInfo(up[i + 1].QQ).Nick} | {up[i + 1].XW} |";
             }
 
             e.FromGroup.SendGroupMessage(template);

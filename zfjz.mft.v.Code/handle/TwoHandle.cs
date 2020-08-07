@@ -92,7 +92,7 @@ namespace zfjz.mft.v.Code.handle
                 }
 
                 var r = p.StatusInt.Get("双修分");
-
+                if (r >= 80) r = 80;
                 p.XW += r;
                 p2.XW += r;
                 e.FromGroup.SendGroupMessage(cqat, $"[CQ:at,qq={qq2}]", " ", $"你们两人一番云雨，水到渠成,功力各增加{r}点");

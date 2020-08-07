@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     public class 九转丹 : Item
     {
         public 九转丹() : base(
-            name0: "九转丹", priceLow0: 137, priceHigh0: 317,
+            name0: "九转丹", priceLow0: 33, priceHigh0: 33,
             fuc: "体质在60以下的+26，否则+13", icon: "",
             des: "昂贵，但十分有效", level: "B")
         {

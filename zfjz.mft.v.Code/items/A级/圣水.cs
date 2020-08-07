@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 圣水() : base(
-            name0: "圣水", priceLow0: 123, priceHigh0: 123,
+            name0: "圣水", priceLow0: 40, priceHigh0: 40,
             fuc: "如果疯狂刚好等于1，幸运+1，修为+800，否则疯狂-11", icon: "",
             des: "服用即庇护", level: "A")
         {

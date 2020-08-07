@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 序列I() : base(
-            name0: "序列I", priceLow0: 3, priceHigh0: 33,
+            name0: "序列I", priceLow0: 2, priceHigh0: 2,
             fuc: "中概率金币+4，小概率幸运+1，极小概率金币+100", icon: "",
             des: "梦幻", level: "C")
         {

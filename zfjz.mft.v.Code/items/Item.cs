@@ -18,6 +18,12 @@ namespace zfjz.mft.v.Code.items
         public string Level;
         public string Fuc;
 
+        //kind 
+        //普通物品（使用一次后生效 例如：回气丹）
+        //使用后触发，触发后消失（like：伤药 ）
+        //使用后持续一段时间，一段时间后消失
+        //类别不够这么多，不足以完全抽象化
+
         public Item(string name0, int priceLow0, int priceHigh0, string icon, string des, string level,string fuc)
         {
             name = name0;

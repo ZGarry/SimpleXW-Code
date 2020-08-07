@@ -43,6 +43,52 @@ namespace zfjz.mft.v.Code.player
         public long QQ;
         public int _XW;
 
+        //异步方法
+        async void LoseXWAsync(int sep)
+        {
+            if (this.StatusStr.Get("伤药") == "on")
+            {
+                //因为是异步的，所以先走完主流程，再显示此流程|两个字：合理
+                await Task.Run(() =>
+                {
+                    var day = (DateTime.Now - DateTime.Parse(StatusStr.Get("伤药begin"))).Days;
+                    if (day >= 45)
+                    {
+                        StatusStr.Set("百毒不侵", "成就");
+                        SendMes("你完成了一个伟大的成就，百毒不侵！");
+                    }
+                    StatusStr.Dic.Remove("伤药begin");
+                    StatusStr.Dic.Remove("伤药");
+                    Thread.Sleep(100);
+                    _XW += sep;
+                    SendMes($"消耗伤药，修为回复{sep}点");
+                });
+            }
+        }
+
+        async void AddXWAsync(int sep)
+        {
+            if (this.StatusStr.Get("增幅药剂") == "on")
+            {
+                await Task.Run(() =>
+                {
+                    var day = (DateTime.Now - DateTime.Parse(StatusStr.Get("增幅药剂begin"))).Days;
+                    //七天不增加任何修为
+                    if (day >= 21)
+                    {
+                        StatusStr.Set("大智若愚", "成就");
+                        SendMes("你完成了一个伟大的成就，大智若愚！");
+                    }
+                    StatusStr.Dic.Remove("增幅药剂begin");
+                    
+                    StatusStr.Dic.Remove("增幅药剂");
+                    Thread.Sleep(100);
+                    _XW += sep;
+                    SendMes($"消耗增幅药剂，修为额外增加{sep}点");
+                });
+            }
+        }
+
         public int XW
         {
             get { return _XW; }
@@ -52,8 +98,8 @@ namespace zfjz.mft.v.Code.player
                 if (value < _XW)
                 {
                     var sep = _XW - value;
-                    SetTNowSubEvent(PlayerSubEvent.XWLose, sep);
-
+                    //调用异步方法
+                    LoseXWAsync(sep);
                 }
                 //增加修为（传入增加值，正数）
                 else
@@ -61,7 +107,8 @@ namespace zfjz.mft.v.Code.player
                     var sep = value - _XW;
                     //此时还在创建中，自然没有p，自然没有其对应的package！amazing！看来所有数据的加载都是危险的，尽量减少依赖项目！
                     StatusInt.Set("修为增加数值", sep);
-                    SetTNowSubEvent(PlayerSubEvent.XWAdd, sep);
+                    AddXWAsync(sep);
+                    //SetTNowSubEvent(PlayerSubEvent.XWAdd, sep);
                 }
                 _XW = value;
             }

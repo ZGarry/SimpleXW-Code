@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 缩小药水() : base(
             name0: "缩小药水", priceLow0: 133, priceHigh0: 146,
             fuc: "进入缩小状态！1h后你将复原！", icon: "",
-            des: "与空气炮，记忆面包同一时间出土", level: "C")
+            des: "与空气炮，记忆面包同一时间出土", level: "违禁")
         {
 
         }

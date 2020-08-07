@@ -27,7 +27,7 @@ namespace zfjz.mft.v.Code.handle
             {
                 //展示信息
                 string template = @$"{(p.StrictJude(10) ? p.Level.Slogan : "")}
-境界: {p.Level.LevelName}
+境界: {p.Level.LevelName} LV.{p.LevelNum}
 修为: {p.XW}
 金币: {p.Gold}
 三相: 体质{p.Basic} | 疯狂{p.Crazy} | 幸运{p.Lucky}

@@ -24,10 +24,34 @@ namespace zfjz.mft.v.Code.player
         {
             return random.Next(100) < rate;
         }
+
+        //正态随机
+        public double Normal()
+        {
+            double s = 0, u = 0, v = 0;
+            while (s > 1 || s == 0)
+            {
+                u = random.NextDouble() * 2 - 1;
+                v = random.NextDouble() * 2 - 1;
+
+                s = u * u + v * v;
+            }
+
+            var z = Math.Sqrt(-2 * Math.Log(s) / s) * u;
+            return (z);
+        }
+
+        //符合要求的正态分布随机数
+        public double RandomNormal(double miu, double sigma)
+        {
+            var z = Normal() * sigma + miu;
+            return (z);
+        }
+
         //体质判定
         public int BasicJude()
-        {
-            return random.Next(Basic) + 1;
+        {           
+            return (int)RandomNormal(Basic / 2.0, Basic / 6.0);
         }
         //疯狂判定
         public int CrazyJude()

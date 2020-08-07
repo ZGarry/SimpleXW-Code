@@ -15,7 +15,7 @@ namespace zfjz.mft.v.Code.items
         public 放大药水() : base(
             name0: "放大药水", priceLow0: 133, priceHigh0: 146,
             fuc: "进入放大状态！1h后你将复原！", icon: "",
-            des: "配合巨化术可以8000斩", level: "C")
+            des: "配合巨化术可以8000斩", level: "违禁")
         {
 
         }

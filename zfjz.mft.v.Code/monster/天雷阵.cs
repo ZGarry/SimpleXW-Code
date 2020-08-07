@@ -27,6 +27,7 @@ namespace zfjz.mft.v.Code.monster
             //还回去
             p._XW = this.XW;
             //p.SendMes($"战斗结束，你的修为复原了");
+            this.XW =100;
         }
     }
 }

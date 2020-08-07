@@ -12,7 +12,7 @@ namespace zfjz.mft.v.Code.items
     public class 复合药 : Item
     {
         public 复合药() : base(
-            name0: "复合药", priceLow0: 3, priceHigh0: 33,
+            name0: "复合药", priceLow0: 1, priceHigh0: 1,
             fuc: "体质+2，疯狂-2，修为+10", icon: "",
             des: "家中常备", level: "C")
         {

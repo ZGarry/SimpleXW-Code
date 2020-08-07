@@ -13,7 +13,7 @@ namespace zfjz.mft.v.Code.items
     {
 
         public 神偷手套() : base(
-            name0: "神偷手套", priceLow0: 8, priceHigh0: 68,
+            name0: "神偷手套", priceLow0: 22, priceHigh0: 88,
             fuc: " '偷取@一名角色' \n-- 立即偷取对方上次获得的修为", icon: "",
             des: "金霞山论极谁主英雄", level: "A")
         {
